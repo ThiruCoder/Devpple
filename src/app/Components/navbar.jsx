@@ -21,6 +21,7 @@ import {
 } from "@mui/material";
 import { alpha } from "@mui/material/styles";
 import { useParams, useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 const navLinks = [
     { name: "Store", href: "/Store" },
@@ -79,18 +80,19 @@ export default function Navbar() {
                 >
                     <Toolbar sx={{ maxWidth: 'lg', mx: 'auto', width: '100%', px: { xs: 2, sm: 3, lg: 4 } }}>
                         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-                            <Link href="/" passHref>
+                            <Link href="/" passHref style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 3 }}>
+                                <Image src={'/logo.ico'} width={30} height={30} style={{ borderRadius: 20 }} />
                                 <Button
-                                    component="a"
                                     sx={{
                                         fontSize: '1.5rem',
                                         fontWeight: 'bold',
-                                        background: (theme) => `linear-gradient(to right, ${theme.palette.primary.main}, ${alpha(theme.palette.primary.main, 0.8)})`,
+                                        background: (theme) =>
+                                            `linear-gradient(to right, ${theme.palette.primary.main}, ${alpha(theme.palette.primary.main, 0.8)})`,
                                         WebkitBackgroundClip: 'text',
                                         WebkitTextFillColor: 'transparent',
                                         textTransform: 'none',
                                         minWidth: 'auto',
-                                        p: 0
+                                        p: 0,
                                     }}
                                 >
                                     Devple
@@ -103,7 +105,6 @@ export default function Navbar() {
                             {navLinks.map((link) => (
                                 <Link key={link.name} href={link.href} passHref>
                                     <Button
-                                        component="a"
                                         sx={{
                                             color: 'text.secondary',
                                             '&:hover': {
