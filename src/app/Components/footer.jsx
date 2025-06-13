@@ -179,7 +179,7 @@ export default function Footer() {
                     }}
                 >
                     <Typography variant="caption" color="text.secondary" sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-                        Copyright © {currentYear} Apple Inc. All rights reserved.
+                        Copyright © {currentYear} Charipalli Thirumalesh Inc. All rights reserved.
                     </Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
                         {['Privacy Policy', 'Terms of Use', 'Sales and Refunds', 'Legal', 'Site Map'].map((item) => (
